@@ -2249,8 +2249,8 @@ input[type=radio]:checked+.radio-replacer {
     display: inline-block;
     margin-left: 20px;
     vertical-align: middle;
-    width: 300px;
-    height: 300px;
+    width: 12px;
+    height: 12px;
     background-color: #161616;
     border-radius: 50%;
     content: '';
@@ -2711,8 +2711,8 @@ hr.lg-divider {
     left: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    width: 100px;
-    height: 100px;
+    width: 500px;
+    height: 500px;
     background: url(../img/loader2.gif) no-repeat center center;
     -webkit-animation: bounce 0.8s infinite ease-in-out;
     -moz-animation: bounce 0.8s infinite ease-in-out;
