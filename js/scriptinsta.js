@@ -1,14 +1,7 @@
-
-
-require('dotenv').config();
-
-const auth_token = process.env.AUTH_TOKEN;
-
 const carrouselSlider = {
     el: {
         instaContainer: $('#insta')
     },
-
 
     handleBuildCarrousel(data) {
         // destructure data object
@@ -43,21 +36,19 @@ const carrouselSlider = {
 
         // loop through data and append to carrousel
         data.map((feedItem, index) => {
-            const videoContent = `<div class="carousel-item ${index === 0 ? 'active':''}"><div class="col-6 col-md-4" controls><source src="${feedItem.media_url}" type="video/mp4></video></div></div>`;
-            const imageContent = `<div class="carousel-item ${index === 0 ? 'active':''}"><div class="col-6 col-md-4"><img src="${feedItem.media_url}" alt="${feedItem.caption}" class="img-fluid"></div></div>`;
-            const contentInsideCarouselItem = media_type === 'video' ? videoContent : imageContent;
-
-            $('.carousel-inner').append(contentInsideCarouselItem)
+            const imageContent = `<div class="carousel-item ${index === 0 ? 'active':''}"><a href="${feedItem.permalink}" target="_blank" rel="noopener"><img class="img-fluid d-block" src="${feedItem.media_url}" alt="${feedItem.caption}"></a></div>`;
+            $('.carousel-inner').append(imageContent)
         })
     },
 
     event() {
-        const token =  AUTH_TOKEN;
+        const token = "IGQVJVZA1ZAKUjlibUhDNW9nSWszY1M3SVlBS18yT2E4TzNUSDRLb0JyMUVGNHpJaGFOZAWtfYXBKX1ZApRVpRZAVExZAS11bzJOYjhZAYUswdUl3WjVrSEl0S1FFRmd0TEJkcDIwVDhvOVNEWFBZARGhCRTV4dwZDZD"
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=media_url,media_type,caption,permalink`
 
         const carrouselEmpty = `<div class="col-6 col-md-4 mb-3">Galeria do Instagram vazia</div>`
 
         $.get(url).then((response) => {
+            console.log(response)
             // check if response is empt
             if (!response.data) {
                 return this.el.instaContainer.append(carrouselEmpty);
