@@ -46,7 +46,7 @@ const carrouselSlider = {
     },
 
     event() {
-        const token =  ${secrets.INSTA_TOKEN_SECURITY};
+        const token =  $secrets.INSTA_TOKEN_SECURITY;
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=media_url,media_type,caption,permalink`
 
         const carrouselEmpty = `<div class="col-6 col-md-4 mb-3">Galeria do Instagram vazia</div>`
