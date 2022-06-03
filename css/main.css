@@ -2709,8 +2709,8 @@ hr.lg-divider {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;
+    margin-top: -190px;
+    margin-left: -350px;
     width: 500px;
     height: 500px;
     background: url(../img/loader2.gif) no-repeat center center;
