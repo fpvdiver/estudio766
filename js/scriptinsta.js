@@ -1,3 +1,9 @@
+
+
+require('dotenv').config();
+
+const auth_token = process.env.AUTH_TOKEN;
+
 const carrouselSlider = {
     el: {
         instaContainer: $('#insta')
@@ -46,7 +52,7 @@ const carrouselSlider = {
     },
 
     event() {
-        const token =  $secrets.SUPER_SECRET;
+        const token =  AUTH_TOKEN;
         const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=media_url,media_type,caption,permalink`
 
         const carrouselEmpty = `<div class="col-6 col-md-4 mb-3">Galeria do Instagram vazia</div>`
