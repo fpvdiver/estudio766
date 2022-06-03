@@ -15,7 +15,7 @@ const carrouselSlider = {
 
         // build html string
         const carrouselSliderContainer = `
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     </ol>
@@ -48,7 +48,6 @@ const carrouselSlider = {
         const carrouselEmpty = `<div class="col-6 col-md-4 mb-3">Galeria do Instagram vazia</div>`
 
         $.get(url).then((response) => {
-            console.log(response)
             // check if response is empt
             if (!response.data) {
                 return this.el.instaContainer.append(carrouselEmpty);
