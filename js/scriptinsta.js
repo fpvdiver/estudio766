@@ -1,8 +1,10 @@
 
 
-require('dotenv').config();
+require ('dotenv').config();
 
 const auth_token = process.env.AUTH_TOKEN;
+
+console.log(auth_token);
 
 const carrouselSlider = {
     el: {
